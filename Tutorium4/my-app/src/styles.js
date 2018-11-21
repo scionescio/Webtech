@@ -10,7 +10,7 @@ const styles = {
     width: "100%"
   },
   header: {
-    padding: [50, 50, 20],
+    margin: [10, 10, 10, 10],
     textAlign: "center",
     display: "block",
     fontSize: 25,
@@ -19,9 +19,21 @@ const styles = {
     textDecoration: "none",
     color: "rgba(63, 35, 43, 0.8)"
   },
-  header2: {
+  headerBig: {
+    margin: [50],
     textAlign: "center",
     display: "block",
+    fontSize: 25,
+    fontFamily: "OpenSans, sans-serif",
+    fontWeight: 300,
+    textDecoration: "none",
+    color: "rgba(63, 35, 43, 0.8)"
+  },
+  navigation: {
+    textAlign: "center",
+    width: "150px",
+    display: "inline-block",
+    margin: [10],
     fontSize: 25,
     fontFamily: "OpenSans, sans-serif",
     fontWeight: 300,
@@ -31,8 +43,7 @@ const styles = {
   image: {
     height: 400,
     width: 600,
-    display: "block",
-    align: "center",
+    display: "flex",
     marginLeft: "auto",
     marginRight: "auto"
   },
@@ -48,26 +59,22 @@ const styles = {
     padding: [0, 24],
     minHeight: "70%",
     width: 600,
-    backgroundColor: "rgba(16, 34, 48, 0.75)",
-    maxHeight: "80%",
-    fontFamily: "Roboto, sans-serif"
+    maxHeight: "80%"
   },
   inputAndOption: {
     textAlign: "left",
     width: 300,
     padding: [0, 10],
-    backgroundColor: "rgba(255, 255, 255, 0)",
     border: "none",
+    backgroundColor: "rgba(255, 255, 255, 0)",
     borderBottom: "1px solid white",
-    color: "white",
     lineHeight: 2,
     fontSize: 15,
     margin: "auto"
   },
   form: {
-    padding: [0, 24],
-    textAlign: "center",
-    paddingBottom: 200
+    padding: [10],
+    align: "center"
   },
   button: {
     margin: 10,
@@ -87,7 +94,7 @@ const styles = {
     display: "block",
     textAlign: "center",
     position: "relative",
-    paddingBottom: 200
+    paddingBottom: 20
   },
   innerWrapper: {
     marginRight: "auto",
@@ -99,12 +106,30 @@ const styles = {
     paddingRight: 5,
     fontFamily: "Roboto, sans-serif"
   },
+  selectHead: {
+    display: "inline",
+    textAlign: "left",
+    width: 300,
+    margin: "auto"
+  },
   select: {
-    width: 230,
+    width: 60,
     fontWeight: 600,
     fontFamily: "Roboto, sans-serif",
     color: "rgba(63, 35, 43, 0.8)",
-    backgroundColor: "rgba(255, 255, 255, 0.9)"
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    display: "block"
+  },
+  footer: {
+    bottom: 10,
+    margin: [10]
+  },
+  tableEntry: {
+    width: "5px"
+  },
+  mapGoogle: {
+    height: 100,
+    width: "100%"
   }
 };
 
