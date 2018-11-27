@@ -4,26 +4,14 @@ import injectSheet from "react-jss";
 import HeaderAfrica from "./HeaderAfrica";
 
 const Contact = ({ classes }) => (
-  <div>
+  <div className={classes.background}>
     <HeaderAfrica />
     <div className={classes.form}>
       <div className={classes.outerWrapper}>
         <div className={classes.innerWrapper}>
           <form action="http://18.218.208.183:3000/request" method="post">
-            <p>
-              <label className={classes.skill} />
-              <select id="gender" className={classes.select} require="true">
-                <option className={classes.select} value="Mr">
-                  Mr
-                </option>
-                <option className={classes.select} value="Mrs">
-                  Mrs
-                </option>
-              </select>
-            </p>
-            <label />
             <input
-            name="name"
+              name="name"
               type="text"
               className={classes.inputAndOption}
               placeholder="Name"
@@ -32,7 +20,7 @@ const Contact = ({ classes }) => (
             <p>
               <label />
               <input
-              name="email"
+                name="email"
                 type="text"
                 className={classes.inputAndOption}
                 placeholder="Email"
@@ -59,7 +47,7 @@ const Contact = ({ classes }) => (
             <p>
               <label />
               <input
-              name="title"
+                name="title"
                 type="text"
                 className={classes.inputAndOption}
                 placeholder="Subject"
@@ -69,7 +57,7 @@ const Contact = ({ classes }) => (
             <p>
               <label />
               <textarea
-              name="message"
+                name="message"
                 type="text"
                 className={classes.inputAndOption}
                 placeholder="Content"

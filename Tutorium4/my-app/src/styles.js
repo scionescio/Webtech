@@ -1,4 +1,33 @@
 const styles = {
+  background: {
+    backgroundColor: "white",
+    maxWidth: "960px",
+    minHeight: "400px",
+    margin: "2em",
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding: "1em",
+    borderRadius: "20px",
+    boxShadow: "10px 10px 60px 2px #545454"
+  },
+  backgroundHeader: {
+    backgroundColor: "#bdbdbd",
+    maxWidth: "960px",
+    height: "100%",
+    padding: "1em",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  backgroundFooter: {
+    backgroundColor: "white",
+    maxWidth: "960px",
+    height: "10%",
+    padding: "1em",
+    marginLeft: "auto",
+    marginRight: "auto",
+    textAlign: "right"
+  },
   formHeader: {
     display: "flex",
     justifyContent: "center",
@@ -10,7 +39,7 @@ const styles = {
     width: "100%"
   },
   header: {
-    margin: [10, 10, 10, 10],
+    border: [10, 10, 10, 10],
     textAlign: "center",
     display: "block",
     fontSize: 25,
@@ -20,7 +49,8 @@ const styles = {
     color: "rgba(63, 35, 43, 0.8)"
   },
   headerBig: {
-    margin: [50],
+    margin: [10],
+    padding: [30, 10, 10, 10],
     textAlign: "center",
     display: "block",
     fontSize: 25,
@@ -38,14 +68,39 @@ const styles = {
     fontFamily: "OpenSans, sans-serif",
     fontWeight: 300,
     textDecoration: "none",
-    color: "rgba(63, 35, 43, 0.8)"
+    color: "rgba(63, 35, 43, 0.8)",
+    "&:hover": {
+      textDecoration: "underline",
+      color: "black"
+    }
+  },
+  navigationFooter: {
+    textAlign: "center",
+    width: "150px",
+    margin: [10],
+    fontSize: 15,
+    fontFamily: "OpenSans, sans-serif",
+    fontWeight: 300,
+    textDecoration: "none",
+    color: "rgba(63, 35, 43, 0.8)",
+    "&:hover": {
+      textDecoration: "underline",
+      color: "black"
+    }
   },
   image: {
     height: 400,
-    width: 600,
+    width: "600",
     display: "flex",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
+    overflow: "hidden"
+  },
+  video: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    height: 400,
+    width: 600
   },
   containerWrapper: {
     display: "flex",
@@ -73,7 +128,7 @@ const styles = {
     margin: "auto"
   },
   form: {
-    padding: [10],
+    padding: "1em",
     align: "center"
   },
   button: {

@@ -9,15 +9,19 @@ import * as serviceWorker from "./serviceWorker";
 
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
+var style = { backgroundColor: "#f6f6f6", width: "100%", height: "100%" };
+
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={App} />
-      <Route exact path="/Rehberge" component={Rehberge} />
-      <Route exact path="/Impressum" component={Impressum} />
-      <Route exact path="/Contact" component={Contact} />
-    </Switch>
-  </BrowserRouter>,
+  <div style={style}>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/Rehberge" component={Rehberge} />
+        <Route exact path="/Impressum" component={Impressum} />
+        <Route exact path="/Contact" component={Contact} />
+      </Switch>
+    </BrowserRouter>
+  </div>,
   document.getElementById("root")
 );
 // If you want your app to work offline and load faster, you can change

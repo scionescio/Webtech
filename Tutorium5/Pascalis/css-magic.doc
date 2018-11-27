@@ -1,0 +1,14 @@
+• externe Stylesheet-Datei mittels <link> eingebunden 
+• Style mittels <style> definiert
+• Style im style-Attribut definiert
+• Anweisungen mit !important definiert
+• Vererbte Eigenschaften (z.B. die Hintergrundfarbe)
+• Position innerhalb einer Style-Datei
+• Unterscheidung der Priorisierung bei folgenden Selektoren:
+– Universalselektor
+– Elementselektor
+– ID-Selektor
+– Klassenselektor
+– Nachfahrselektor
+– Attributselektor
+– Pseudoklasse :hover – Pseudoklasse :not

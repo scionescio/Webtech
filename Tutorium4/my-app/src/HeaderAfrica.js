@@ -4,7 +4,7 @@ import injectSheet from "react-jss";
 import styles from "./styles";
 
 const HeaderAfrica = ({ classes }) => (
-  <div>
+  <div className={classes.backgroundHeader}>
     <Link to="/" className={classes.headerBig}>
       KIEZAPP Afrikanisches Viertel
     </Link>
@@ -17,9 +17,6 @@ const HeaderAfrica = ({ classes }) => (
       </Link>
       <Link to="/impressum" className={classes.navigation}>
         Impressum
-      </Link>
-      <Link to="/contact" className={classes.navigation}>
-        Contact
       </Link>
     </div>
   </div>
