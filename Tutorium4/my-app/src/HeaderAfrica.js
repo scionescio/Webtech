@@ -6,7 +6,7 @@ import styles from "./styles";
 const HeaderAfrica = ({ classes }) => (
   <div className={classes.backgroundHeader}>
     <Link to="/" className={classes.headerBig}>
-      KIEZAPP Afrikanisches Viertel
+      Afrikanisches Viertel
     </Link>
     <div className={classes.outerWrapper}>
       <Link to="/" className={classes.navigation}>

@@ -10,6 +10,12 @@ const App = ({ classes }) => (
     <HeaderAfrica />
     <article className={classes.form}>
       <img className={classes.image} src={pic} alt="Wiki" />
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aspernatur
+        aut, enim neque blanditiis, fugit dolorum nemo eligendi quis nisi
+        possimus natus quaerat, recusandae quidem? Reiciendis doloribus sunt
+        incidunt repellat.
+      </div>
     </article>
     <Footer />
   </div>

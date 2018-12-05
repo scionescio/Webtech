@@ -2,7 +2,7 @@ const styles = {
   background: {
     backgroundColor: "white",
     maxWidth: "960px",
-    minHeight: "400px",
+    minHeight: "600px",
     margin: "2em",
     display: "block",
     marginLeft: "auto",
@@ -15,7 +15,7 @@ const styles = {
     backgroundColor: "#bdbdbd",
     maxWidth: "960px",
     height: "100%",
-    padding: "1em",
+    paddingTop: "2em",
     marginLeft: "auto",
     marginRight: "auto"
   },
@@ -46,10 +46,14 @@ const styles = {
     fontFamily: "OpenSans, sans-serif",
     fontWeight: 300,
     textDecoration: "none",
-    color: "rgba(63, 35, 43, 0.8)"
+    color: "rgba(63, 35, 43, 0.8)",
+    textTransform: "uppercase",
+    letterSpacing: "5px",
+    marginTop: "2em",
+    marginBottom: "1em"
   },
   headerBig: {
-    margin: [10],
+    margin: 0,
     padding: [30, 10, 10, 10],
     textAlign: "center",
     display: "block",
@@ -57,7 +61,8 @@ const styles = {
     fontFamily: "OpenSans, sans-serif",
     fontWeight: 300,
     textDecoration: "none",
-    color: "rgba(63, 35, 43, 0.8)"
+    color: "#444",
+    height: "1.2em"
   },
   navigation: {
     textAlign: "center",
@@ -68,7 +73,7 @@ const styles = {
     fontFamily: "OpenSans, sans-serif",
     fontWeight: 300,
     textDecoration: "none",
-    color: "rgba(63, 35, 43, 0.8)",
+    color: "#444",
     "&:hover": {
       textDecoration: "underline",
       color: "black"
@@ -89,8 +94,8 @@ const styles = {
     }
   },
   image: {
-    height: 400,
-    width: "600",
+    height: 300,
+    width: 450,
     display: "flex",
     marginLeft: "auto",
     marginRight: "auto",
