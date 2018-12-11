@@ -1,0 +1,7 @@
+h1,nav,footer {
+    display: none
+
+}
+article {
+    column-count: 3;
+}

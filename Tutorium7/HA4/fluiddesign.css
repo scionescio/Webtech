@@ -1,0 +1,43 @@
+li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+  
+  }
+  nav,footer {
+      border: solid;
+      width: 100%;
+      background-color: white
+  }
+
+  article {
+      border: solid;
+      background-color: white
+  }
+
+  #content{
+    background-color: lightgrey;
+  }
+
+  footer {
+      text-align: right;
+  }
+
+  article {
+      position: relative;
+      width: 80%;
+     
+      left: 10%;
+      right: 10%;
+  }
+
+  @media (max-width: 500px){
+    article {
+        width: 100%;
+        left: 0%;
+      right: 0%;
+    }
+  }
+
+
+  
