@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+    <title>Kiez App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kurzbeschreibung">
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src= "KiezJS.js"></script>
+    <link href="design.css" rel="stylesheet" media="screen
+    and (min-width: 961px)">
+    <link href="mobileDesign.css" rel="stylesheet" media="screen
+and (max-width: 961px)" > 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+
+
+</head>
+ 
+<body>
+    <div id = "page">
+    <div id = "container">
+       <header>
+    <h1 id = "h1">Böcklerpark</h1>
+
+    
+    <div id = "inlinenav"> 
+        <ul>
+            <li><a href="KiezApp.html">Überblick   </a></li>
+            <li><a href ="Sport.html">Sportangebote</a></li>
+        </ul>
+    </div>
+    <!--
+    <div id = "mobilenav">
+    <button class="btn-menu">
+            <span class="bar"></span>
+            <span class="text">Menu</span>
+          </button>
+          <ul>
+              <li><a href="KiezApp.html">Home</a></li>
+              <li><a href="Sport.html">Sportangebote</a></li>
+          </ul>
+        </div> -->
+        <div id="mobilenav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                  <a href="KiezApp.html">Home</a>
+                  <a href="Sport.html">Sportangebote</a>
+                  
+                </div>
+              </div>
+              <span style="font-size:30px;cursor:pointer; float: right; color: white" onclick="openNav()">&#9776; MENU</span>
+            </header>
+<script>
+function openNav() {
+  document.getElementById("mobilenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mobilenav").style.width = "0%";
+}
+</script>
+    <!--<select>
+        <option value ="KiezApp.html">Überblick</option> 
+        <option value ="Sport.html">Sportangebote</option> 
+    </select> -->
+    
+    
+   
+    <main role= "main">
+    <img src = "2880px-Berlin-Kreuzberg_Blick_vom_Urbanhafen_auf_den_Böcklerpark.jpg" alt = "lel" class = "bild">
+<section id= "content">
+    <div id = "inhalt">
+    <h2> Geschichte</h2>
+    <p id="geschichte"> Nachdem im Jahr 1922 die Städtische Gasanstalt das Gelände aufgab, legte Heinrich Wiepking-Jürgensmann einen Wiesenpark an. 1936 erhielt er zur Zeit des Nationalsozialismus die Bezeichnung Harry-Anderssen-Park, benannt nach einem Mitglied der Sturmabteilung. Nach dem Krieg wurde der Park im Jahr 1945 in Urbanpark, 1951 in Böcklerpark umbenannt. Seit dieser Zeit trägt seitdem den Namen des ersten DGB-Vorsitzenden, Hans Böckler.</p>
+
+    <h2>Nutzung</h2>
+    <p id = "nutzung"> Im Park befinden sich einige Kinderspielplätze sowie seit 1978 der Wohnkomplex Böcklerpark, zu dem auch das Statthaus Böcklerpark gehört. Unter dem Motto Miteinander in Vielfalt hat man es sich zum Ziel gesetzt, ein Freizeitangebot für Kinder, Jugendliche und Erwachsene anzubieten. Im August 2011 stand das Statthaus Böcklerpark in Flammen[2]. Grund dafür war eine neue gelegte Elektroleitung auf dem Dach. Fünf Feuerwehrstaffeln löschten den Brand im Statthaus. 100 Quadratmeter Dach brannten dabei ab. In Folge mussten Veranstaltungen, wie zum Beispiel die Wrestlingshow „GWF Berlin Wrestling Night“ abgesagt/verlegt werden</p>
+
+    <h2> Sonstiges</h2>
+    <p id = "sonstiges"> Zum Gedenken an Hans Böckler wurde im Park eine Büste aus Bronze aufgestellt. Diese wurde jedoch in der Nacht vom 1. März auf den 2. März 2011 vermutlich von Metalldieben entwendet</p>
+    </div>
+<div id = "daten">
+    <h3> Daten</h3>
+    <table class = "table table-striped">
+        <tbody>
+            <tr>
+                <td>Größe</td>
+                <td>420 qm^2</td>
+            </tr>
+            <tr> 
+            <td>Dichte an Tickern </td>
+            <td> 4 / qm^2</td>
+            </tr>
+            <tr>
+                <td> Wassertemperatur</td>
+                <td> 14 Grad</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</section>
+<div id= "quote">
+<h3>Über den Park</h3>
+<p id="zitat"> "ist nice" - ich</p>
+</div>
+
+<footer> Kontakt & Impressum
+</footer>
+
+</div>
+</div>
+</main>
+</body>
+</html>
