@@ -12,6 +12,7 @@ class Person {
 
 const person1 = new Person("Max", 1967, 2, "m");
 const person11 = new Person("Maxi", 1967, 2, "m");
+const person12 = new Person("AMaxi", 1967, 2, "m");
 const person2 = new Person("Maria", 1990, 1, "f");
 const person3 = new Person("Meik", 1982, 2, "m");
 const person4 = new Person("Mareike", 1985, 3, "f");
@@ -27,7 +28,8 @@ const persons = [
   person5,
   person6,
   person7,
-  person11
+  person11,
+  person12
 ];
 
 // // Diese Funktion filtert das übergebene Array nach dem Geschlecht
@@ -69,9 +71,9 @@ function getSortedStatus(personsArray) {
       return { name: x.name, ageStatus: (2018 - x.birthYear) * x.status };
     })
     .sort((x, y) => {
-      return x.ageStatus === y.ageStatus && x.name.length > y.name.length
+      return x.ageStatus === y.ageStatus && x.name.localeCompare(y.name) === 1
         ? 1
-        : x.ageStatus > y.ageStatus
+        : x.ageStatus >= y.ageStatus
         ? -1
         : 1;
     });
@@ -109,7 +111,7 @@ function getAmount(personsArray) {
     .map(x => x.sex)
     .reduce(
       (mapp, y) =>
-        mapp.has(y) === true ? mapp.set(y, mapp.get(y) + 1) : mapp.set(y, 1),
+        mapp.has(y) ? mapp.set(y, mapp.get(y) + 1) : mapp.set(y, 1),
       new Map()
     );
 }

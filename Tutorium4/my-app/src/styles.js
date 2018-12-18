@@ -1,4 +1,31 @@
 const styles = {
+  fcontainer: {
+    display: "inline-flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    width: "100%",
+    height: "100%",
+    margin: 20
+  },
+  fimage: {
+    width: "100%",
+    flex: "none"
+  },
+  fitem: {
+    display: "block",
+    width: 288,
+    height: 50,
+    position: "relative"
+  },
+  finnercontainer: {
+    position: "relative",
+    textAlign: "center",
+    fontWeight: "20",
+    color: "black"
+  },
+  finfo: { position: "absolute", bottom: 10, left: 10 },
+  fbar: { position: "absolute", top: "50%", left: "50%" },
   background: {
     backgroundColor: "white",
     maxWidth: "960px",
@@ -55,7 +82,7 @@ const styles = {
   headerBig: {
     margin: 0,
     padding: [30, 10, 10, 10],
-    textAlign: "center",
+    textAlign: "left",
     display: "block",
     fontSize: 25,
     fontFamily: "OpenSans, sans-serif",
@@ -80,7 +107,7 @@ const styles = {
     }
   },
   navigationFooter: {
-    textAlign: "center",
+    textAlign: "right",
     width: "150px",
     margin: [10],
     fontSize: 15,
@@ -88,6 +115,7 @@ const styles = {
     fontWeight: 300,
     textDecoration: "none",
     color: "rgba(63, 35, 43, 0.8)",
+    height: "0.75em",
     "&:hover": {
       textDecoration: "underline",
       color: "black"
@@ -150,11 +178,11 @@ const styles = {
     width: 300
   },
   outerWrapper: {
-    margin: "auto",
     display: "block",
     textAlign: "center",
     position: "relative",
-    paddingBottom: 20
+    textTransform: "uppercase",
+    letterSpacing: "1px"
   },
   innerWrapper: {
     marginRight: "auto",
@@ -190,6 +218,24 @@ const styles = {
   mapGoogle: {
     height: 100,
     width: "100%"
+  },
+  cellLeft: {
+    paddingTop: 5,
+    padding: [4, 8],
+    textAlign: "left",
+    fontWeight: "bold"
+  },
+  cellRight: {
+    paddingTop: 5,
+    padding: [4, 8],
+    textAlign: "right"
+  },
+  cell: {
+    paddingTop: 5,
+    paddingBottom: 10,
+    "tbody tr:nth-child(even)": {
+      backgroundColor: "black"
+    }
   }
 };
 
