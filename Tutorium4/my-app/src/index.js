@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import Rehberge from "./Rehberge";
 import Impressum from "./Impressum";
+import WeddingBars from "./WeddingBars";
 import Contact from "./Contact";
 import * as serviceWorker from "./serviceWorker";
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/Rehberge" component={Rehberge} />
+        <Route exact path="/Bars" component={WeddingBars} />
         <Route exact path="/Impressum" component={Impressum} />
         <Route exact path="/Contact" component={Contact} />
       </Switch>

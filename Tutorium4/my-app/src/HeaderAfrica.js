@@ -15,6 +15,9 @@ const HeaderAfrica = ({ classes }) => (
       <Link to="/rehberge" className={classes.navigation}>
         Rehberge
       </Link>
+      <Link to="/bars" className={classes.navigation}>
+        Bars
+      </Link>
       <Link to="/impressum" className={classes.navigation}>
         Impressum
       </Link>
