@@ -1,0 +1,13 @@
+SPA
+
+man fetcht nur einmal Daten vom Server beim Laden einer Seite . Dann switcht man mit javascript zwischen den inhalten hin und her
+
+Sehr schnelle reaktionszeiten, sehr responsive
+kein Serverside code
+SEO schwieriger
+braucht moderne Browser, js muss aktiviert sein vom user
+nur ein Entrypoint auf website
+Security
+
+Boiler plate content that is on every page (header, footer, logo, copyright banner, etc.) only loads once per typical browser session.
+No overhead latency on switching "pages".
