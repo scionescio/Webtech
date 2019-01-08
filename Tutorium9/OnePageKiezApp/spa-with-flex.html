@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiez App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kurzbeschreibung">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="design.css" rel="stylesheet" media="screen
+    and (min-width: 961px)">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+
+
+
+</head>
+
+<body>
+    <div id="page">
+        <div id="container">
+            <header>
+                <h1 id="h1">Böcklerpark</h1>
+
+
+                <div id="inlinenav">
+                    <ul>
+                        <li><a href="#" onclick="navigateToStart()">Überblick   </a></li>
+                        <li><a href="#" onclick="navigateToSport();">Sportangebote</a></li>
+
+                    </ul>
+                </div>
+
+            </header>
+        </div>
+
+        <script>
+            let supportsTemplate = function() {
+                return "content" in document.createElement("template");
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                if (supportsTemplate()) {
+                    console.log("Templates are supported");
+
+                    let start = document.getElementById("start");
+
+                    let content = start.content;
+
+                    document.querySelector('#container').appendChild(content);
+                } else {
+                    console.log("fail!")
+                }
+            })
+
+            let navigateToSport = function() {
+                if (supportsTemplate()) {
+                    let sport = document.getElementById("sport");
+                    let content = sport.content;
+
+                    document.querySelector('#container').appendChild(content);
+
+                    document.getElementById("main").remove();
+
+
+                } else {
+                    console.log("fail!")
+                }
+            }
+            let navigateToStart = function() {
+                /* if (supportsTemplate()) {
+                    let start = document.getElementById("start");
+                    let cont = start.content;
+                    console.log(cont);
+
+                    document.querySelector('#container').appendChild(cont);
+
+                    /// document.getElementById("main").remove();
+
+
+                } else {
+                    console.log("fail!")
+                }
+            } */
+                window.location.reload();
+            }
+        </script>
+
+
+
+</body>
+
+<template id="start"> 
+        <main id="main">
+                <img src="2880px-Berlin-Kreuzberg_Blick_vom_Urbanhafen_auf_den_Böcklerpark.jpg" alt="lel" class="bild">
+                <section id="content">
+                    <div id="inhalt">
+                        <h2> Geschichte</h2>
+                        <p id="geschichte"> Nachdem im Jahr 1922 die Städtische Gasanstalt das Gelände aufgab, legte Heinrich Wiepking-Jürgensmann einen Wiesenpark an. 1936 erhielt er zur Zeit des Nationalsozialismus die Bezeichnung Harry-Anderssen-Park, benannt
+                            nach einem Mitglied der Sturmabteilung. Nach dem Krieg wurde der Park im Jahr 1945 in Urbanpark, 1951 in Böcklerpark umbenannt. Seit dieser Zeit trägt seitdem den Namen des ersten DGB-Vorsitzenden, Hans Böckler.</p>
+
+                        <h2>Nutzung</h2>
+                        <p id="nutzung"> Im Park befinden sich einige Kinderspielplätze sowie seit 1978 der Wohnkomplex Böcklerpark, zu dem auch das Statthaus Böcklerpark gehört. Unter dem Motto Miteinander in Vielfalt hat man es sich zum Ziel gesetzt, ein Freizeitangebot
+                            für Kinder, Jugendliche und Erwachsene anzubieten. Im August 2011 stand das Statthaus Böcklerpark in Flammen[2]. Grund dafür war eine neue gelegte Elektroleitung auf dem Dach. Fünf Feuerwehrstaffeln löschten den Brand
+                            im Statthaus. 100 Quadratmeter Dach brannten dabei ab. In Folge mussten Veranstaltungen, wie zum Beispiel die Wrestlingshow „GWF Berlin Wrestling Night“ abgesagt/verlegt werden</p>
+
+                        <h2> Sonstiges</h2>
+                        <p id="sonstiges"> Zum Gedenken an Hans Böckler wurde im Park eine Büste aus Bronze aufgestellt. Diese wurde jedoch in der Nacht vom 1. März auf den 2. März 2011 vermutlich von Metalldieben entwendet</p>
+                    </div>
+                    <div id="daten">
+                        <h3> Daten</h3>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Größe</td>
+                                    <td>420 qm^2</td>
+                                </tr>
+                                <tr>
+                                    <td>Dichte an Tickern </td>
+                                    <td> 4 / qm^2</td>
+                                </tr>
+                                <tr>
+                                    <td> Wassertemperatur</td>
+                                    <td> 14 Grad</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </section>
+                <div id="quote">
+                    <h3>Über den Park</h3>
+                    <p id="zitat"> "ist nice" - ich</p>
+                </div>
+
+                <footer> Kontakt & Impressum
+                </footer>
+
+        </div>
+</div>
+</main>
+</template>
+
+<template id="sport">
+    
+   <div id = "main">  
+    <h2 id = "h1"> Sportangebote </h2>
+     <div id= "container-1">
+        <script>
+            const freizeitInfoCollection = [{
+                "image": "skatepark.jpg",
+                "class": "SP",
+                "name": "Skatepark",
+                "p": "hinten links"
+            }, {
+                "image": "gain.jpg",
+                "class": "Gain",
+                "name": "Gain-Anlage",
+                "p": "Mittig, rechts von TTPlatten"
+            }, {
+                "image": "ttt.jpg",
+                "class": "TT",
+                "name": "Tischtennisplatten",
+                "p": "Mittig, links von Gain-Anlage"
+            }]
+        
+            const appendFreetimeTemplates = () => {
+                freizeitInfoCollection.forEach(x => { 
+var t = document.querySelector('#freetimeTemplate');
+// Populate the src at runtime.
+t.content.querySelector('img').src = x.image;
+t.content.querySelector('h4').innerHTML = x.name;
+t.content.querySelector('p').innerHTML = x.p;
+
+var clone = document.importNode(t.content, true);
+document.querySelector('#container-1').appendChild(clone);
+                }
+                )
+            }
+            appendFreetimeTemplates()
+
+           
+
+        //     const appendFreizeitTemplates = () => {
+        //         freizeitInfoCollection.forEach(x => { 
+        //             var z = document.createElement('p')
+        //             z.innerHTML = createFreizeitTemplate(x) 
+        //             document.querySelector('#container-1').appendChild(z)
+        //         }
+        //         )
+        //     }
+        
+        //     const createFreizeitTemplate = (freizeitInfo) => {
+        //    return  `<div style="width:288px;">
+        //     <img src=${freizeitInfo.image} class=${freizeitInfo.class}>
+        //     <h4 style="color: white">${freizeitInfo.name}</h4>
+        //     <p>${freizeitInfo.p}</p>
+        //     </div>` }
+        //     appendFreizeitTemplates()
+</script>
+</div>
+</div>
+</template>
+
+<template id="freetimeTemplate">
+        <div style="width:288px;">
+        <img src style="width:100%;
+        height:90%;">
+        <h4 style="color:black"></h4>
+         <p></p>
+        </div>
+</template>
+
+
+<template id=" Kontakt">
+    <h2> Kontakt</h2>
+    <p> Das ist der Inhalt der Kontaktseite</p>
+</template>
+
+</html>
