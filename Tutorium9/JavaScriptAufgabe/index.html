@@ -1,0 +1,167 @@
+Skip to content Search or jump to… Pull requests Issues Marketplace Explore @LotzofLotz Sign out 1 0 0 Codelessandro/FerienAppVorbei Code Issues 0 Pull requests 0 Projects 0 Wiki Insights FerienAppVorbei/ferienvorbeiapp.html 6680411 16 hours ago Alessandro
+Schneider js in home template 188 lines (133 sloc) 3.69 KB
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FerienVorbeiApp</title>
+    <link rel="stylesheet" href="styles/2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 10fr;
+            grid-template-columns: 2fr 8fr;
+            grid-template-areas: "header header" "nav main";
+            grid-column-gap: 20px;
+        }
+        
+        header {
+            grid-area: header;
+        }
+        
+        nav {
+            grid-area: nav;
+        }
+        
+        nav ul li {
+            display: block;
+            /*fix */
+        }
+        
+        main {
+            grid-area: main;
+        }
+        
+        .active {
+            font-weight: bold;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h2>FerienVorbeiApp</h2>
+        </header>
+        <nav class="menu">
+            <ul>
+
+            </ul>
+        </nav>
+        <main></main>
+
+
+        <template id="as_gemacht">
+        <img src="https://baubeaver.de/wp-content/uploads/werkbank-infos-drechseln-querholz.jpg"/>
+        <br/>
+        gedrechselt!
+    </template>
+
+        <template id="df_krass">
+        Sau geil aber wieder vorbei. Jetzt Uni und Webtech. Juhu!
+    </template>
+
+
+
+        <template id="home">
+        Willkommen in der FerienVorbei-App. Hier eine Übersicht über unsere Geschenke!!!
+        <div class="content">
+
+        </div>
+        <template id="geschenkeTemplate">
+            <h3>
+            </h3>
+            <p>
+            </p>
+
+
+        </template>
+        <script type="text/javascript">
+            for (const d of geschenkJson) {
+                const def = document.querySelector("#geschenkeTemplate").content;
+                def.querySelector("h3").innerHTML = d.name
+                def.querySelector("p").innerHTML = d.description
+                document.querySelector(".content").appendChild(document.importNode(def, true));
+            }
+        </script>
+
+        </template>
+
+
+
+    </div>
+
+
+    <script type="text/javascript">
+        const pages = {
+            home: {
+                id: "home",
+                navTitle: "Home"
+            },
+            as_gemacht: {
+                id: "as_gemacht",
+                navTitle: "AS: Review"
+            },
+            df_krass: {
+                id: "df_krass",
+                navTitle: "DF: Krasse Ferien!"
+            },
+        };
+        /* build menu */
+        const nav = document.querySelector("nav")
+        Object.keys(pages).forEach(function(page) {
+            const li = document.createElement("li")
+            const a = document.createElement("a")
+            a.href = "#".concat(pages[page].id)
+            a.id = "#".concat(pages[page].id)
+            a.innerHTML = pages[page].navTitle
+            li.appendChild(a)
+            nav.appendChild(li)
+        })
+        window.addEventListener("hashchange", evt => {
+            const page = evt.newURL.split("#")[1] || "intro";
+            navigateTo(page);
+            evt.preventDefault();
+        });
+        const main = document.querySelector("main");
+
+        function navigateTo(where) { // where must be a key of pages
+            if (!pages.hasOwnProperty(where)) { // Guard, better alternative: Map
+                where = "home";
+            }
+            const {
+                id,
+                navTitle
+            } = pages[where];
+            const template = document.getElementById(id)
+                // clear content
+            while (main.firstChild) {
+                main.removeChild(main.firstChild);
+            }
+            // append content
+            main.appendChild(document.importNode(template.content, true));
+            // fix menu
+            Array.from(nav.getElementsByTagName("a")).forEach(a => a.classList.remove("active"));
+            document.getElementById("#".concat(id)).classList.add("active")
+        }
+        // Start with the intro page!
+        navigateTo(location.hash.substring(1) || "intro");
+        const geschenkJson = [{
+            "name": "Keks",
+            "description": "zum Essen",
+        }, {
+            "name": "Schuhe",
+            "description": "hab ich mir erst im neuen Jahr gekauft!"
+        }];
+    </script>
+
+
+</body>
+
+</html>
+© 2019 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub Pricing API Training Blog About Press h to open a hovercard with more details.
