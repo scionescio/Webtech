@@ -173,39 +173,39 @@
                 "p": "Mittig, links von Gain-Anlage"
             }]
         
-            const appendFreetimeTemplates = () => {
-                freizeitInfoCollection.forEach(x => { 
-var t = document.querySelector('#freetimeTemplate');
-// Populate the src at runtime.
-t.content.querySelector('img').src = x.image;
-t.content.querySelector('h4').innerHTML = x.name;
-t.content.querySelector('p').innerHTML = x.p;
+//             const appendFreetimeTemplates = () => {
+//                 freizeitInfoCollection.forEach(x => { 
+// var t = document.querySelector('#freetimeTemplate');
+// // Populate the src at runtime.
+// t.content.querySelector('img').src = x.image;
+// t.content.querySelector('h4').innerHTML = x.name;
+// t.content.querySelector('p').innerHTML = x.p;
 
-var clone = document.importNode(t.content, true);
-document.querySelector('#container-1').appendChild(clone);
-                }
-                )
-            }
-            appendFreetimeTemplates()
+// var clone = document.importNode(t.content, true);
+// document.querySelector('#container-1').appendChild(clone);
+//                 }
+//                 )
+//             }
+//             appendFreetimeTemplates()
 
            
 
-        //     const appendFreizeitTemplates = () => {
-        //         freizeitInfoCollection.forEach(x => { 
-        //             var z = document.createElement('p')
-        //             z.innerHTML = createFreizeitTemplate(x) 
-        //             document.querySelector('#container-1').appendChild(z)
-        //         }
-        //         )
-        //     }
+            const appendFreizeitTemplates = () => {
+                freizeitInfoCollection.forEach(x => { 
+                    var z = document.createElement('p')
+                    z.innerHTML = createFreizeitTemplate(x) 
+                    document.querySelector('#container-1').appendChild(z)
+                }
+                )
+            }
         
-        //     const createFreizeitTemplate = (freizeitInfo) => {
-        //    return  `<div style="width:288px;">
-        //     <img src=${freizeitInfo.image} class=${freizeitInfo.class}>
-        //     <h4 style="color: white">${freizeitInfo.name}</h4>
-        //     <p>${freizeitInfo.p}</p>
-        //     </div>` }
-        //     appendFreizeitTemplates()
+            const createFreizeitTemplate = (freizeitInfo) => {
+           return  `<div style="width:288px;">
+            <img src=${freizeitInfo.image} class=${freizeitInfo.class}>
+            <h4 style="color: white">${freizeitInfo.name}</h4>
+            <p>${freizeitInfo.p}</p>
+            </div>` }
+            appendFreizeitTemplates()
 </script>
 </div>
 </div>
