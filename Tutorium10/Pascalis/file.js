@@ -50,7 +50,8 @@
     // 5
     const filterTUBMails = (text) => {
         words = text.match(/([a-zA-Z0-9._-]+@(mailbox.tu-berlin.de))/gi);
-        return words ? words : []
+
+        return words ? words.map(x => x.toLowerCase()) : []
     }
 
     console.log("filterTUBMails", filterTUBMails("Eine mögliche Adresse ist max-mustermann@Mailbox.Tu-berlin.de aber auch admin+superschlau@mailbox.tu-berlin.de und auch pascalis.maschke@t-online.de."));
@@ -63,15 +64,19 @@
         const earliestDateOfDeletion = getEarliestDateOfDeletion()
         const maxDateOfDeletion = getMaxDateOfDeletion()
             // console.log("earliestDateOfDeletion", earliestDateOfDeletion)
-        const textToDate = new Date(text.replace(pattern, validateDate))
-            // if (textToDate instanceof Date) {
-            //     return earliestDateOfDeletion
-            // } else 
+        const validate = text.replace(pattern, validateDate)
+
+        if (!validate.match(pattern)) {
+            return earliestDateOfDeletion
+        }
+        const textToDate = new Date(validate)
+
         if (+textToDate < +maxDateOfDeletion && +textToDate > +earliestDateOfDeletion) {
             return textToDate
         } else if (text === "max" || +textToDate > +maxDateOfDeletion) {
             return maxDateOfDeletion
-        } else if (text === "min") {
+        } else
+        if (text === "min") {
             return earliestDateOfDeletion
         }
 
@@ -84,6 +89,9 @@
         const newMillisecond = '000'
         const newTimeStamp = `${year}-${month}-${day}${time}${hour}:${newMinute}:${newSecond}.${newMillisecond}${zone}`
             // console.log("newTimeStamp", newTimeStamp)
+        if (!(match && year && month && day && time && hour && minute && second && millisecond && zone)) {
+            return "nope"
+        }
         return newTimeStamp
     }
     const getEarliestDateOfDeletion = () => {
