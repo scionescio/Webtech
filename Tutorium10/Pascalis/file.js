@@ -1,59 +1,59 @@
-    // // 1
-    // const getCharacterCount = (text) => {
-    //     return text ?
-    //         text.match(/./g).length : 0
-    // }
+    // 1
+    const getCharacterCount = (text) => {
+        return text ?
+            text.match(/./g).length : 0
+    }
 
-    // console.log("getCharacterCount", getCharacterCount("!W-o r-t?"))
+    console.log("getCharacterCount", getCharacterCount("!W-o r-t?"))
 
-    // // 2
-    // const getWords = (text) => {
-    //     const pattern = /((\w|€)+)/g
-    //     const words = text ? text.match(pattern) : []
-    //     return words
-    // }
+    // 2
+    const getWords = (text) => {
+        const pattern = /((\w|€)+)/g
+        const words = text ? text.match(pattern) : []
+        return words
+    }
 
-    // console.log("getWords", getWords("Hi 123 _ 10€ 3.33"))
+    console.log("getWords", getWords("Hi 123 _ 10€ 3.33"))
 
-    // // 3
-    // const getLongestWords = (text) => {
-    //     let maxLength = 0
-    //     const words = getWords(text)
-    //     words.forEach(x => maxLength = getCharacterCount(x) > maxLength ? getCharacterCount(x) : maxLength)
-    //     return words.filter(x => getCharacterCount(x) === maxLength)
-    // }
+    // 3
+    const getLongestWords = (text) => {
+        let maxLength = 0
+        const words = getWords(text)
+        words.forEach(x => maxLength = getCharacterCount(x) > maxLength ? getCharacterCount(x) : maxLength)
+        return words.filter(x => getCharacterCount(x) === maxLength)
+    }
 
-    // console.log("getLongestWords", getLongestWords("Hi 123 _ 10€ 3.33"))
+    console.log("getLongestWords", getLongestWords("Hi 123 _ 10€ 3.33"))
 
-    // // 4 basically the solution to homework 7.4
-    // const getWordFrequency = (text) => {
-    //     const words = getWords(text)
-    //     const map = words.map(x => x.toLowerCase()).reduce(
-    //         (frequency, y) =>
-    //         frequency.has(y) ? frequency.set(y, frequency.get(y) + 1) : frequency.set(y, 1),
-    //         new Map()
-    //     )
-    //     return text ? strMapToObj(map) : {}
-    // }
+    // 4 basically the solution to homework 7.4
+    const getWordFrequency = (text) => {
+        const words = getWords(text)
+        const map = words.map(x => x.toLowerCase()).reduce(
+            (frequency, y) =>
+            frequency.has(y) ? frequency.set(y, frequency.get(y) + 1) : frequency.set(y, 1),
+            new Map()
+        )
+        return text ? strMapToObj(map) : {}
+    }
 
-    // const strMapToObj = strMap => {
-    //     const obj = Object.create(null)
-    //     for (const [k, v] of strMap) {
-    //         obj[k] = v
-    //     }
-    //     console.log(obj)
-    //     return obj
-    // }
+    const strMapToObj = strMap => {
+        const obj = Object.create(null)
+        for (const [k, v] of strMap) {
+            obj[k] = v
+        }
+        console.log(obj)
+        return obj
+    }
 
-    // console.log("getWordFrequency", getWordFrequency("Hi hi constructor _ 10€ 3.10€"))
+    console.log("getWordFrequency", getWordFrequency("Hi hi constructor _ 10€ 3.10€"))
 
-    // // 5
-    // const filterTUBMails = (text) => {
-    //     words = text.match(/([a-zA-Z0-9._-]+@(mailbox.tu-berlin.de))/gi);
-    //     return words ? words : []
-    // }
+    // 5
+    const filterTUBMails = (text) => {
+        words = text.match(/([a-zA-Z0-9._-]+@(mailbox.tu-berlin.de))/gi);
+        return words ? words : []
+    }
 
-    // console.log("filterTUBMails", filterTUBMails("Eine mögliche Adresse ist max-mustermann@Mailbox.Tu-berlin.de aber auch admin+superschlau@mailbox.tu-berlin.de und auch pascalis.maschke@t-online.de."));
+    console.log("filterTUBMails", filterTUBMails("Eine mögliche Adresse ist max-mustermann@Mailbox.Tu-berlin.de aber auch admin+superschlau@mailbox.tu-berlin.de und auch pascalis.maschke@t-online.de."));
 
     //6 
     const getUnpublishingDate = (text) => {
