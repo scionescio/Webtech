@@ -32,7 +32,7 @@
             (frequency, y) =>
             frequency.has(y) ? frequency.set(y, frequency.get(y) + 1) : frequency.set(y, 1),
             new Map()
-        );
+        )
         return text ? strMapToObj(map) : {}
     }
 
@@ -49,26 +49,41 @@
 
     // 5
     const filterTUBMails = (text) => {
-        words = text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g);
+        words = text.match(/([a-zA-Z0-9._-]+@(mailbox.tu-berlin.de))/gi);
         return words ? words : {}
     }
 
-    console.log("filterTUBMails", filterTUBMails("Eine mögliche Adresse ist max-mustermann@mailbox.tu-berlin.de aber auch admin+superschlau@mailbox.tu-berlin.de und auch pascalis.maschke@t-online.de."));
+    console.log("filterTUBMails", filterTUBMails("Eine mögliche Adresse ist max-mustermann@Mailbox.Tu-berlin.de aber auch admin+superschlau@mailbox.tu-berlin.de und auch pascalis.maschke@t-online.de."));
 
     //6 
     const getUnpublishingDate = (text) => {
         const pattern = /([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])(T)([0-9]{2}):([0-9]{2}):([0-9]{2}).([0-9]{3})([A-Z])/
         const parts = text.match(pattern)
-        console.log(parts)
+        earliestDateOfDeletion = getEarliestDateOfDeletion()
+        console.log("earliestDateOfDeletion", earliestDateOfDeletion)
 
-
-        return new Date(text.replace(pattern, makeDate))
+        const textToDate = new Date(text.replace(pattern, validateDate))
+        return textToDate
     }
-    const makeDate = (match, year, month, day, time, hour, minute, second, millisecond, zone) => {
-        console.log("makeDate:", match, year, month, day, time, hour, minute, second, millisecond, zone)
-        return (parseInt(year), parseInt(month), parseInt(day), time, parseInt(hour), parseInt(minute), parseInt(second), parseInt(millisecond), zone)
+    const validateDate = (match, year, month, day, time, hour, minute, second, millisecond, zone) => {
+        console.log("validateDate:", match, year, month, day, time, hour, minute, second, millisecond, zone)
+        const newMinute = '00'
+        const newSecond = '00'
+        const newMillisecond = '000'
+        const newTimeStamp = `${year}-${month}-${day}${time}${hour}:${newMinute}:${newSecond}.${newMillisecond}${zone}`
+        console.log("newTimeStamp", newTimeStamp)
+        return newTimeStamp
+    }
+    const getEarliestDateOfDeletion = () => {
+        const rightNow = new Date()
+        const earliestDateOfDeletion = new Date(rightNow.setDate(rightNow.getDate() + 1))
+        earliestDateOfDeletion.setSeconds(0)
+        earliestDateOfDeletion.setMilliseconds(0)
+        earliestDateOfDeletion.setMinutes(0)
+
+        return earliestDateOfDeletion
     }
 
-    console.log("getUnpublishingDate", getUnpublishingDate("2018-01-10T18:00:00.000Z"))
+    console.log("getUnpublishingDate", getUnpublishingDate("2018-01-10T18:01:01.001Z"))
 
     //"$1 $2 $3 $4 $5 $6 $7 $8 $9"
