@@ -1,0 +1,140 @@
+<body>
+<script>/*
+function getCharacterCount (text) {
+    return text ?  text.match(/./g).length : 0; 
+}
+console.log("getCharacterCount")
+console.log(getCharacterCount("hallo"))
+console.log(getCharacterCount())
+
+function getWords(text) {
+    let pattern= /((\w|€)+)/g;
+    let words= text ? text.match(pattern) : [];
+    return words;
+}
+console.log("getWords");
+console.log(getWords("hallo du hund"))
+console.log(getWords())
+
+function getLongestWords (text) {
+    let longestWords = [];
+    let lengths = [];
+    let array = getWords(text);
+    for(i in array){
+        const element = array[i];
+        lengths.push(getCharacterCount(element));
+    }
+
+  let maxLengths = indexOfMax(lengths);
+
+    var resultArr = maxLengths.map(i => array[i]);
+    return resultArr;
+}
+
+function indexOfMax(arr) {
+    var largest=[0];
+ 
+ for(var i=0 ; i<arr.length; i++){
+   var cmp=(arr[i]-largest[0])>0;
+      if(cmp==true){
+      largest =[];
+      largest.push(arr[i]);
+      }
+ }
+
+ 
+ var index=[];
+ for(var i=0;i<arr.length;i++){
+    var cmp=arr[i]-largest[0]==0;
+    if(cmp){
+    index.push(i);
+    }
+ }
+ return index;
+}
+ console.log("longestWords");
+ console.log(getLongestWords("hallo was geeht"))
+ console.log(getLongestWords());
+
+
+
+function filterTUBMails (text){
+      let words = text.match(/([a-zA-Z0-9._-]+@(mailbox.tu-berlin.de))/gi);
+      console.log(words);
+    /* for (let i = 0; i<words.length; i++){
+       words[i] = words[i].toLowerCase();
+     }
+
+
+        return words ? words.map(toLower) : [];
+    }
+console.log("filter")
+console.log("realone" ,filterTUBMails("Eine mögliche Adresse ist max-mUstermann@mailBox.tu-berlin.de "))
+console.log(filterTUBMails(""))
+let adr= ["max-mUstermann@mailBox.tu-berlin.de","hallOO"];
+ 
+
+
+console.log("pls",adr.map(toLower))
+//console.log(adr.map(toLowerCase()));*/
+
+
+function getWords(text) {
+    let pattern= /((\w|€)+)/g;
+    let words= text ? text.match(pattern) : [];
+    return words;
+}
+function getCharacterCount (text) {
+    return text ?  text.match(/./g).length : 0; 
+}
+toLower = function(x) {
+    return x.toLowerCase();};
+
+function filterTUBMails (text){
+      let words = text.match(/([a-zA-Z0-9._-]+@(mailbox.tu-berlin.de))/gi);
+        return words ? words.map(toLower) : [];
+    }
+
+console.log("dis boy frfr : ", filterTUBMails("Eine mögliche Adresse ist max-mUstermann@mailBox.tu-berlin.de"))
+
+function getLongestWords (text) {
+    let longestWords = [];
+    let lengths = [];
+    let array = getWords(text);
+    for(i in array){
+        const element = array[i];
+        lengths.push(getCharacterCount(element));
+    }
+
+  let maxLengths = indexOfMax(lengths);
+
+    var resultArr = maxLengths.map(i => array[i]);
+    return resultArr;
+}
+
+function indexOfMax(arr) {
+    var largest=[0];
+ 
+ for(var i=0 ; i<arr.length; i++){
+   var cmp=(arr[i]-largest[0])>0;
+      if(cmp==true){
+      largest =[];
+      largest.push(arr[i]);
+      }
+ }
+ 
+ var index=[];
+ for(var i=0;i<arr.length;i++){
+    var cmp=arr[i]-largest[0]==0;
+    if(cmp){
+    index.push(i);
+    }
+ }
+ return index;
+}
+
+console.log("lel", getLongestWords(""))
+</script>
+
+
+</body>
