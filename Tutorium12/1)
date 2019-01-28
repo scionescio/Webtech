@@ -1,0 +1,24 @@
+1)
+npm : möglichkeit code mit andren entwicklern zu teilen und code von andren zu benutzen  und einfach versionen managen 
+
+package.json : name, version, description , main, scripts, test, author, license
+ -> nmp init --yes
+
+ paket local installieren: npm install packagename (--save) -> auch im json file vermerkt
+ -> node modules ordner wird erstellt 
+
+ npm uninstall packagename --save (um auch aus json file entfernen)
+
+ globales paket installieren: npm install packagename -g 
+ 							  npm uninstall packagename -g
+
+update package : npm update packagename --save
+
+semantic versioning : gibt andren entwicklern die code benutzen infos über reichweite der veränderung
+zb. 4.12.3 
+-> 4 = major release (nicht rückwärts kompatibel, breaks sth)
+12 -> Minor release (neues feature aber sonst noch kompatibel)
+3 -> patch (zb bugfix)
+
+
+
