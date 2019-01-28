@@ -113,7 +113,7 @@
         return maxDateOfDeletion
     }
 
-    console.log("getUnpublishingDate 1", getUnpublishingDate("hiiiii i i i 001Z"))
+    console.log("getUnpublishingDate 1", getUnpublishingDate(undefined))
     console.log("getUnpublishingDate", getUnpublishingDate("2019:01-20T18:01:01.001Z"))
     console.log("getUnpublishingDate afterMax", getUnpublishingDate("2019-05-10T18:01:01.001Z"))
     console.log("getUnpublishingDate max", getUnpublishingDate("max"))
